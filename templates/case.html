@@ -1,0 +1,567 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Возбуждение уголовного дела</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <td>
+                <table border="1" width="100%" cellpadding="5">
+                    <tr>
+                        <th>
+                            <center><b>ФОТОРОБОТ</b></center>
+                        </th>
+                        <th>
+                            <center>ЛИЧНЫЕ ДАННЫЕ</center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <CENTER>
+                                <img src=https://gta.com.ua/img/articles/sa/sa-mp/skins-id/skin_{{form.skin_id.data}}.png
+                                     width="100%" height="100%">
+                                <p>
+                                    {{ form.skin_id.label }}
+                                    <br>
+                                    {{ form.skin_id(class="form-control")
+                                    }}<br>
+                                    {% for error in form.skin_id.errors %}
+                                <p class="alert alert-danger" role="alert">
+                                    {{ error }}
+                                </p>
+                                {% endfor %}
+                                </p>
+                            </CENTER>
+                        </td>
+
+                        <td>
+                            <table border="1" width="100%" cellpadding="5">
+                                <tr>
+                                    <td>ИМЯ ФАМИЛИЯ:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.namesurname(class="form-control")
+                                            }}<br>
+                                            {% for error in form.namesurname.errors %}
+                                        <p class="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ВОЗРАСТ:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.age(class="form-control") }}<br>
+                                            {% for error in form.age.errors %}
+                                        <p content="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p></td>
+                                </tr>
+                                <tr>
+                                    <td>ВЕС:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.weight(class="form-control") }}<br>
+                                            {% for error in form.weight.errors %}
+                                        <p class="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>РОСТ:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.height(class="form-control") }}<br>
+                                            {% for error in form.height.errors %}
+                                        <p content="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ТЕЛОСЛОЖЕНИЕ:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.telo(class="form-control") }}<br>
+                                            {% for error in form.telo.errors %}
+                                        <p class="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>НАЦИОНАЛЬНОСТЬ:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.nationality(class="form-control") }}<br>
+                                            {% for error in form.nationality.errors %}
+                                        <p content="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ОСОБЫЕ ПРИМЕТЫ:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.omens(class="form-control") }}<br>
+                                            {% for error in form.omens.errors %}
+                                        <p class="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>МЕСТО РАБОТЫ ( СЛУЖБЫ ), ДОЛЖНОСТЬ ( ЗВАНИЕ ):</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.work(class="form-control") }}<br>
+                                            {% for error in form.work.errors %}
+                                        <p content="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>МЕСТО ПРОЖИВАНИЯ:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.home(class="form-control") }}<br>
+                                            {% for error in form.home.errors %}
+                                        <p content="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>E-ID НОМЕР:</td>
+                                    <td>
+                                        <p>
+                                            <br>
+                                            {{ form.e_id(class="form-control") }}<br>
+                                            {% for error in form.e_id.errors %}
+                                        <p content="alert alert-danger" role="alert">
+                                            {{ error }}
+                                        </p>
+                                        {% endfor %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>НОМЕР ПРОИЗВОДСТВА:</td>
+                                    <td>
+                                        {{ num }}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <th>
+                <center>ПРОЦЕССУАЛЬНЫЕ ДЕЙСТВИЯ</center>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <table border="1" width="100%" cellpadding="10">
+                    <tr>
+                        <th width="100">
+                            <center>Категория:</center>
+                        </th>
+                        <th width="300">
+                            <center>Информация о расследовании:</center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>I. Ведущие агенты:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.agents(class="form-control") }}<br>
+                                {% for error in form.agents.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>II. Данные о преступлении: общая характеристика, квалификация преступления:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.crime_data(class="form-control") }}<br>
+                                {% for error in form.crime_data.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>III. Осмотр места происшествия:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.inspection_of_scene(class="form-control") }}<br>
+                                {% for error in form.inspection_of_scene.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IV. Осмотр иной местности, помещения, транспорта:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.other_inspections(class="form-control") }}<br>
+                                {% for error in form.other_inspections.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>V. Опросы:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.surveys(class="form-control") }}<br>
+                                {% for error in form.surveys.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VI. Оперативные мероприятия:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.operational_activities(class="form-control") }}<br>
+                                {% for error in form.operational_activities.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VII. Прослушка.</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.wiretapping(class="form-control") }}<br>
+                                {% for error in form.wiretapping.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VIII. Обыск местности, помещения, транспорта:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.searches_places(class="form-control") }}<br>
+                                {% for error in form.searches_places.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IX. Задержание:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.detention(class="form-control") }}<br>
+                                {% for error in form.detention.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>X. Обыск задержанного лица:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.searches_person(class="form-control") }}<br>
+                                {% for error in form.searches_person.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            XI. Обыск всех сотрудников организации
+                            в случае наличия факта незаконного оборота
+                            наркотических средств внутри организации:
+                        </td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.searches_all_organizations(class="form-control") }}<br>
+                                {% for error in form.searches_all_organizations.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>XII. Допросы:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.interrogations(class="form-control") }}<br>
+                                {% for error in form.interrogations.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>XIII. Работа под прикрытием / внедрение в преступную группировку:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.undercover(class="form-control") }}<br>
+                                {% for error in form.undercover.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>XIV: Постановление агента.</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.resolution(class="form-control") }}<br>
+                                {% for error in form.resolution.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>XV. Аресты:</td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.arrests(class="form-control") }}<br>
+                                {% for error in form.arrests.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <th>
+                <center>ДОКАЗАТЕЛЬНАЯ БАЗА</center>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <table border="1" width="100%" cellpadding="5">
+                    <tr>
+                        <th><b>
+                            <center>Описание доказательства</center>
+                        </b></th>
+                        <th>
+                            <center>Доказательство(ссылки на видео)</center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.description_evid(class="form-control") }}<br>
+                                {% for error in form.description_evid.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.proofs_evid(class="form-control") }}<br>
+                                {% for error in form.proofs_evid.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <th>
+                <center>ЭКСПЕРТИЗЫ</center>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <table border="1" width="100%" cellpadding="5">
+                    <tr>
+                        <th><b>
+                            <center>Описание проведенных экспертиз</center>
+                        </b></th>
+                        <th>
+                            <center>Доказательство(ссылки на видео)</center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.description_expert(class="form-control") }}<br>
+                                {% for error in form.description_expert.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.proofs_expert(class="form-control") }}<br>
+                                {% for error in form.proofs_expert.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <th>
+                <center>ОРДЕРЫ</center>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <table border="1" width="100%" cellpadding="5">
+                    <tr>
+                        <th><b>
+                            <center>На что получены ордеры номер ордера</center>
+                        </b></th>
+                        <th>
+                            <center>Доказательство</center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.description_order(class="form-control") }}<br>
+                                {% for error in form.description_order.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <br>
+                                {{ form.proofs_order(class="form-control") }}<br>
+                                {% for error in form.proofs_order.errors %}
+                            <p content="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div>{{message}}</div>
+    <p>{{ form.is_finished() }} {{ form.is_finished.label }}</p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
